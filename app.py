@@ -6,10 +6,10 @@ import os
 
 
 app = Flask(__name__)
-#base de datos 
+#base de datos (Ruta de la base de datos Blog.bd)(need update)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///C:/Users/ElYosnelCP/Desktop/Cinncinatus/Flask-Blog/blog.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-#ruta especifica de la carpeta donde se subiran las imagenes
+#ruta especifica de la carpeta donde se subiran las imagenes (Ruta de la carpeta Uploads)(need update)
 app.config['UPLOAD_FOLDER'] = r'C:\Users\ElYosnelCP\Desktop\Cinncinatus\Flask-Blog\static\uploads'
 
 #Permitir pgn, jpg ... 

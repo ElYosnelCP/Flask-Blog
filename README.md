@@ -29,7 +29,8 @@ debes de tener ejecutar las siguientes líneas de comando:
 
 ##  Ejecución de la app
 
-luego de que todas las dependencias están instaladas debes ejecutar el código flask que tiene por nombre app.py y ejecutar la siguiente línea de comando:
+luego de que todas las dependencias están instaladas debes ejecutar el código flask que tiene por nombre app.py e actualizar la ruta de la base de datos SQLALCHEMY y la de la carpeta Uploads (es la carpeta donde se subirán las imágenes subidas al blog)**(need update)** luego  ejecutar la siguiente línea de comando:
+
 ~: flask --app app run --debug
 
 y a disfrutar del blog de flask... así que cualquier mejora o feadback coméntamelo cuando quieras.
