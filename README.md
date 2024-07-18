@@ -47,7 +47,7 @@ En fin, este es un proyecto para desarrollar más conocimientos y tener conocimi
 
 > Me gustó mucho como interactúan todas las funciones del blog, y el diseño del blog está muy duro **Jeremy**
 
+> WOO me encanto como realizaste el código para subir imágenes a tus post del blog, utilizaste una lógico que me hubiera ayudado en un proyecto flask que estaba desarrollando hace unos meses **Joel**
 
-WOO me encanto como realizaste el código para subir imágenes a tus post del blog, utilizaste una lógico que me hubiera ayudado en un proyecto flask que estaba desarrollando hace unos meses 
 
 ###End
