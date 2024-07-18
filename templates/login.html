@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<! -- FORMULARIO DEL PANEL DE LOGIN -->
+<div class="formulario">
+    <h1>Inicio de sesion</h1>
+    <form method="post">
+        <div class="username">
+            <input type="text" required>
+            <label>Nombre de usuario</label>
+
+        </div>
+        <div class="contraseña">
+            <input type="password" required>
+            <label>Contraseña</label>
+        </div>
+        <div class="recodar">¿Olvido su contraseña?</div>
+        
+        <input class="Loginenviar" type="submit" value="Iniciar">
+        <div class="registrarse">
+            <p>Quiero hacer el <a href="#" class="registrarse"> registro </a></p>
+        </div>
+        
+
+    </form>
+</div>
+
+
+
+{% endblock %}

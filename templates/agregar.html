@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<h2>ESCRIBE BLOG POSTS</h2>
+<! -- FORMULARIO PARA AGREGAR POST -->
+<form class="login-form" action="{{ url_for('crear_post') }}" method="post"  enctype="multipart/form-data">
+	<input type="text" name="titulo" placeholder="titulo" class="inputAgregar">
+
+	<textarea name="texto" cols="30" rows="10"></textarea>
+	<! -- Para visualizar la imagen -->
+	<input type="file" id="imageInput" name="imageInput" accept="image/*" class="inputAgregar">
+		<img id="imagePreview" name src="" alt="Previsualizacion de la imagen" style="max-width: 350px; display:none; padding: 10px; box-shadow: 0 0 2px rgb(45, 45, 46); margin: 10px 0px 0px 5px">
+		<! -- boton enviar post  -->
+	<input type="submit" name="submit" value="Subir post">
+</form>
+
+<! -- Accion que  realizara el post, para enviar el post y que se guarde en la base de datos -->
+<script>
+ 
+	const imageInput = document.getElementById('imageInput')
+	const imagePreview = document.getElementById('imagePreview')
+
+	imageInput.addEventListener('change', function(event){
+		
+		const file = event.target.files[0]; 
+
+		if(file && file.type.startsWith('image/')){
+			const imageURL = URL.createObjectURL(file);
+
+			imagePreview.src = imageURL;
+
+			imagePreview.style.display = 'block';
+
+		}else {
+			imagePreview.style.display = 'none';
+		}
+	});
+</script>
+
+{% endblock %}

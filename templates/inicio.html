@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% for post in posts %}
+
+<section id="section">
+    <h3 class="post-title">{{ post.titulo }}</h3>
+    <! -- Sube el fecha exacta a la que se sube el post -->
+    <p class="date">Publicado en: {{ post.fecha.strftime('%m/%d/%Y') }}</p>
+    <p>{{ post.texto }}</p>
+
+    {% if post.filename %}
+    <! -- Visualiza la imagen subida en el post  -->
+    <div class=IMGDIV>
+        <img id="displayIMG" src=" {{ url_for('static', filename='uploads/' +  post.filename) }}" alt="imagen" >
+    </div>
+    {% endif %}
+    
+    <div class="contentButton">
+        <! -- button -->
+        <!-- Enlace `<a>` para borrar un post -->
+        <a href="#" class="delete-button" onclick="borrarPost({{ post.id }})">Borrar Post</a>
+    </div>
+</section>
+{% endfor %}
+
+<! -- Accion  que realizara el post con JavaScript -->
+<script>
+    function borrarPost(post_id) {
+        if (confirm('¿Estás seguro de que deseas borrar este post?')) {
+            // Crear un formulario oculto
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/borrar';
+
+            // Crear un input oculto para enviar el ID del post
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'post_id';
+            input.value = post_id;
+
+            // Agregar el input al formulario
+            form.appendChild(input);
+
+            // Agregar el formulario al cuerpo del documento y enviarlo
+            document.body.appendChild(form);
+            form.submit();
+        }
+    }
+</script>
+
+
+{% endblock %}
